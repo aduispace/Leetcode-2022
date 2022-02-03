@@ -11,6 +11,7 @@ class Solution {
                 left = mid + 1;
             }
         }
+        // It could exceed the nums.length - 1 !!!
         return left;
     }
 }
