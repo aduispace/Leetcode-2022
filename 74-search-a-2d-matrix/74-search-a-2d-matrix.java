@@ -5,6 +5,7 @@ class Solution {
         int left = 0, right = m*n - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
+            // treat this 2D array as 1D and this `x = mid / n, y = mid % n` is the key!!
             int x = mid / n, y = mid % n; 
             if (matrix[x][y] == target) {
                 return true;
