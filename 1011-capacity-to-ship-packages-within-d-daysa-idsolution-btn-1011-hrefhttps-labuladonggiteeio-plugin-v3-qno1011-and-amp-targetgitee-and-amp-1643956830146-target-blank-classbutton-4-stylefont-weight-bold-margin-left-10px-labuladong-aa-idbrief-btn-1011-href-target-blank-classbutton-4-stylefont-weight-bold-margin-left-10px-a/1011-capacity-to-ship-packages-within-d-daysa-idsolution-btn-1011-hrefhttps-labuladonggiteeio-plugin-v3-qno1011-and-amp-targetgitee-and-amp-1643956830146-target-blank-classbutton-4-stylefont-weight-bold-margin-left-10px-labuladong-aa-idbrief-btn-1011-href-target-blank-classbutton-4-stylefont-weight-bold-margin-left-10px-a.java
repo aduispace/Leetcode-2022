@@ -2,6 +2,7 @@ class Solution {
     public int shipWithinDays(int[] weights, int days) {
         int left = 0, right = 0;
         for (int i : weights) {
+            // most important part: left bound >= max of weight array! right bound <= sum
             left = Math.max(i, left);
             right += i;
         }
@@ -21,7 +22,8 @@ class Solution {
         for (int i : weights) {
             if (eachShipLoadSum + i > capacity) {
                 days -= 1;
-                if (days <= 0) return false;
+                if (days == 0) return false;
+                // the load for that day would be moved to next day so eachShipLoadSum = i;
                 eachShipLoadSum = i;
             } else {
                 eachShipLoadSum += i;
