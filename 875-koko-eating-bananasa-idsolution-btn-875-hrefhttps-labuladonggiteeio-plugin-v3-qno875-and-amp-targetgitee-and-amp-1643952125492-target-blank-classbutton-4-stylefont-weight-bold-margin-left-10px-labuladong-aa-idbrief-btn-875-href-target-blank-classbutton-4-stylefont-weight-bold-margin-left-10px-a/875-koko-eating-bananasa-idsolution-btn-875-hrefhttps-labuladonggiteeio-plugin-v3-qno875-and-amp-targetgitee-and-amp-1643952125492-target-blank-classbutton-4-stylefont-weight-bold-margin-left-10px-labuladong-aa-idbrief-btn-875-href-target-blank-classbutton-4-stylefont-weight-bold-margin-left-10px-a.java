@@ -14,10 +14,19 @@ class Solution {
         return left;
     }
     
+    // private boolean ifFinishedInTime(int[] piles, int k, int h) {
+    //     int totalHours = 0;
+    //     for (int i : piles) {
+    //         totalHours += i % k == 0 ? i / k : i / k + 1;
+    //     }
+    //     return totalHours <= h;
+    // }
+    
     private boolean ifFinishedInTime(int[] piles, int k, int h) {
         int totalHours = 0;
         for (int i : piles) {
-            totalHours += i % k == 0 ? i / k : i / k + 1;
+            // can use Math.ceil() here to get round up number 
+            totalHours += (int) Math.ceil((double) i / k);
         }
         return totalHours <= h;
     }
