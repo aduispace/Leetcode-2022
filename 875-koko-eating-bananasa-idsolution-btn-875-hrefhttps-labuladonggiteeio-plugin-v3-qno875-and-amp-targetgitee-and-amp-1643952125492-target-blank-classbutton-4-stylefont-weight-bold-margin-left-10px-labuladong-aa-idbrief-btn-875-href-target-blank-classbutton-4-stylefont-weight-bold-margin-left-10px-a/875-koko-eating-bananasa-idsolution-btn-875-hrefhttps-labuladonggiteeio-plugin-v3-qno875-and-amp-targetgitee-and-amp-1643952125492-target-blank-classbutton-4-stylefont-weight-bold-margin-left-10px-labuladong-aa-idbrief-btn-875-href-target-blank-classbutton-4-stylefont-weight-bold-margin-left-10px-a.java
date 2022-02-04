@@ -1,6 +1,6 @@
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        // O(NlogN)
+        // O(NlogM), n is length of piles[], and m is maximum number of piles[]
         Arrays.sort(piles);
         int left = 1, right = piles[piles.length - 1];
         while (left <= right) {
