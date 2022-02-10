@@ -8,6 +8,7 @@ class Solution {
         
         // 用最小堆做bfs
         // iterate k - 1 times, because it has been initialized with [0, 0]
+        // Time: O(klogK) - worst when k = n^2, it would be O(N^2logN)
         for (int i = 0; i < k - 1; i++) {
             Coordinate now = minHeap.poll();
             // go right to search
