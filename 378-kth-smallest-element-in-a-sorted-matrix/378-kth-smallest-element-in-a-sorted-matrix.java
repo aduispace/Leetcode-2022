@@ -1,7 +1,7 @@
 class Solution {
     public int kthSmallest(int[][] matrix, int k) {
         int n = matrix.length;
-        PriorityQueue<Coordinate> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
+        PriorityQueue<Coordinate> minHeap = new PriorityQueue<Coordinate>((a, b) -> a.val - b.val);
         minHeap.offer(new Coordinate(0, 0, matrix[0][0]));
         boolean[][] visited = new boolean[n][n];
         visited[0][0] = true;
