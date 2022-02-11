@@ -7,6 +7,7 @@ class Solution {
             if (sum == target) {
                 result[0] = left + 1;
                 result[1] = right + 1;
+                // 提前返回避免超时。。。
                 return result;
             } else if (sum > target) {
                 right--;
