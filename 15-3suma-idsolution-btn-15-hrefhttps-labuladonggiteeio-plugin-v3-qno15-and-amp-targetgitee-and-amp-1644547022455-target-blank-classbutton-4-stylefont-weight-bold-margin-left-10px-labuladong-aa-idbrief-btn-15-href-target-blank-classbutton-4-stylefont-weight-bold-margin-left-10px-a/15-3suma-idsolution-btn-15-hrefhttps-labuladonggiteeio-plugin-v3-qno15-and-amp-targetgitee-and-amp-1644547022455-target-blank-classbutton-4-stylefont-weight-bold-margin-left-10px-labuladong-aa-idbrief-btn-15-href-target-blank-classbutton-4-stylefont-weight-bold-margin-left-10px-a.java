@@ -5,13 +5,13 @@ class Solution {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
         // for + twoSum while loop : O(N^2)
-        for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i < nums.length - 1; i++) {
             int target = 0 - nums[i];
             List<List<Integer>> res = twoSum(nums, target, i + 1);
             result.addAll(res);
             
             // need this to deduplicate the first candidate!!!
-            while (i < nums.length - 2 && nums[i] == nums[i+1]) {
+            while (i < nums.length - 1 && nums[i] == nums[i+1]) {
                 i++;
             }
         }
