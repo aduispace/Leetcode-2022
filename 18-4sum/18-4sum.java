@@ -1,4 +1,6 @@
 class Solution {
+    // kSum模版： Complexity - Time: O(n^(k - 1)), Space: O(k)
+    
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);
         return kSum(nums, target, 0, 4);
@@ -12,10 +14,6 @@ class Solution {
             while (left < right) {
                 int sum = nums[left] + nums[right];
                 if (sum == target) {
-                    // List<Integer> temp = new ArrayList<>();
-                    // temp.add(nums[left]);
-                    // temp.add(nums[right]);
-                    // result.add(temp);
                     result.add(new ArrayList<Integer>(Arrays.asList(nums[left], nums[right])));
                     while (left < nums.length - 1 && nums[left] == nums[left + 1]) {
                         left++;
