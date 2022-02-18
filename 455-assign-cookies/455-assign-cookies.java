@@ -1,5 +1,7 @@
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
+        // Time: O(NlogN)
+        // greedy algo, sort and no matter g[leftG] <= s[leftS] or no, just move S pointer one more
         int contentChildren = 0;
         Arrays.sort(g);
         Arrays.sort(s);
