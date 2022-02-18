@@ -7,7 +7,7 @@ class Solution {
         }
         int leftMax = height[0], rightMax = height[height.length - 1]; // 边界线不能存水
         int left = 0, right = height.length - 1;
-        while (left < right) {
+        while (left <= right) {
             if (leftMax < rightMax) {
                 // min(leftMax, rightMax), in this case it is leftMax
                 // 先update leftMax！！！确定当前left高度如果比leftmax高，此处不存水
@@ -21,7 +21,9 @@ class Solution {
             }
         }
         
-        // return trap;
-        return trap + Math.min(Math.max(height[left], leftMax), Math.max(height[right], rightMax)) - height[left];
+        return trap;
+        
+        // 注意最后trap先加完才move指针，别忘了算left=right的情况的水
+        // return trap + Math.min(Math.max(height[left], leftMax), Math.max(height[right], rightMax)) - height[left];
     }
 }
