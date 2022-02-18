@@ -8,10 +8,8 @@ class Solution {
             if (g[leftG] <= s[leftS]) {
                 contentChildren++;
                 leftG++;
-                leftS++;
-            } else {
-                leftS++;
             }
+            leftS++;
         }
         
         return contentChildren;
