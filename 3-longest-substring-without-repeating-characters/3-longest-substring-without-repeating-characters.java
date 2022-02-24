@@ -8,12 +8,13 @@ class Solution {
         while (j < s.length()) {
             char right = s.charAt(j);
             rec.put(right, rec.getOrDefault(right, 0) + 1);
-            j++;
             while (rec.getOrDefault(right, 0) > 1) {
                 char left = s.charAt(i);
-                i++;
                 rec.put(left, rec.getOrDefault(left, 0) - 1);
+                i++;
             }
+            j++;
+
             
             longest = Math.max(j - i, longest);
         }
