@@ -1,14 +1,15 @@
 class Solution {
     public int subarraysWithKDistinct(int[] nums, int k) {
+        // exact(k) = atMost(K) - atMost(K - 1)
         return maxNumberOfSubarraysWithKDistinct(nums, k) - maxNumberOfSubarraysWithKDistinct(nums, k - 1);
     }
-    
+    // ！！！模版代码：
     private int maxNumberOfSubarraysWithKDistinct(int[] nums, int k) {
         int i = 0, j = 0; // i for left(slow), j for right(fast)
         int result = 0;
         Map<Integer, Integer> rec = new HashMap<>();
         while (j < nums.length) {
-            /**
+            /** 以右边快指针为固定，收缩左边慢指针，找到正好为k的区间停止，满足的subarray数量为：j - i + 1;
             move fast pointer j, count k first, and the update record map, finally move pointer j
             */
             if (rec.getOrDefault(nums[j], 0) == 0) { // rec.containsKey() works too
@@ -27,7 +28,6 @@ class Solution {
                 i++;
             }
             result += j - i + 1;
-            
         }
         
         return result;
