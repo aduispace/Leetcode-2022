@@ -1,6 +1,9 @@
 class Solution {
     public int longestSubstring(String s, int k) {
-        // divide and conquer 
+        // Divide the problem into subproblems. (Divide Phase).
+        // Repeatedly solve each subproblem independently and combine the result to              solve the original problem. (Conquer Phase).
+        // divide and conquer: using recursion
+        // O(N^2)
         return helper(0, s.length() - 1, s, k);
     }
     
@@ -13,6 +16,7 @@ class Solution {
             freqMap[s.charAt(i) - 'a']++;
         }
         for (int i = start; i <= end; i++) {
+            // pivot is the point that split problems into two subProblems
             char pivot = s.charAt(i);
             if (freqMap[pivot - 'a'] < k) {
                 return Math.max(helper(start, i - 1, s, k), helper(i + 1, end, s, k));
