@@ -22,7 +22,7 @@ class Solution {
                 return Math.max(helper(start, i - 1, s, k), helper(i + 1, end, s, k));
             }
         }
-        
+        // 这里返回end - start + 1是因为对于每一个子问题，如果pfreqMap[pivot - 'a'] < k的pivot找不到，说明找到符合要求的substring，长度就是end - start + 1
         return end - start + 1;
     }
 }
