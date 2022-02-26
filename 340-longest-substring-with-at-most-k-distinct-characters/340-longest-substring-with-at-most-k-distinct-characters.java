@@ -11,6 +11,7 @@ class Solution {
             if (rec.getOrDefault(chRight, 0) == 1) {
                 distinct++;
             }
+            // in any case we could move right border, just move left to shrink the distinct
             right++;
             while (left < s.length() && distinct > k) {
                 char chLeft = s.charAt(left);
