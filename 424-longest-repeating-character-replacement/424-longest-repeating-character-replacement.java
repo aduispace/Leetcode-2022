@@ -10,9 +10,11 @@ class Solution {
             freq.put(rightCh, freq.getOrDefault(rightCh, 0) + 1);
             maxFreq = Math.max(maxFreq, freq.get(rightCh));
             right++;
+            // window长度-最大出现次数字母长度，要 <= K
             if ((right - left) - maxFreq > k) {
                 char leftCh = s.charAt(left);
                 freq.put(leftCh, freq.getOrDefault(leftCh, 0) - 1);
+                // 理解这个更新条件很重要
                 maxFreq = Math.max(maxFreq, freq.get(leftCh));
                 left++;
             }
