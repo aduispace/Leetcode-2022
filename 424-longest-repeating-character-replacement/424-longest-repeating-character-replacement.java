@@ -11,7 +11,7 @@ class Solution {
             maxFreq = Math.max(maxFreq, freq.get(rightCh));
             right++;
             // window长度-最大出现次数字母长度，要 <= K
-            if ((right - left) - maxFreq > k) {
+            while ((right - left) - maxFreq > k) {
                 char leftCh = s.charAt(left);
                 freq.put(leftCh, freq.getOrDefault(leftCh, 0) - 1);
                 // 理解这个更新条件很重要
