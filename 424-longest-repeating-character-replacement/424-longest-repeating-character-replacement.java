@@ -15,7 +15,7 @@ class Solution {
                 char leftCh = s.charAt(left);
                 freq.put(leftCh, freq.getOrDefault(leftCh, 0) - 1);
                 // 理解这个更新条件很重要
-                maxFreq = Math.max(maxFreq, freq.get(leftCh));
+                // maxFreq = Math.max(maxFreq, freq.get(leftCh));
                 left++;
             }
             
