@@ -2,7 +2,9 @@ class Solution {
     public String minWindow(String s, String t) {
         // sliding window
         // window shrink condition: if current substring is valid, shrink from left
+        // needs two maps: 1. record letters in string t  2. record letters in current window
         // 只记录unique letter count remaining，比如aabc 就是3 (a, b, c)
+        
         int[] map = new int[256];
         int left = 0, targetRemainCount = 0;
         String result = "";
