@@ -12,6 +12,8 @@ class Solution {
     public ListNode middleNode(ListNode head) {
         ListNode fast = head.next, slow = head;
         while (fast != null) {
+            // slow + fast iteration pointer, to find the middle node of LinkedList
+            // need to check fast.next == null or not
             fast = fast.next != null ? fast.next.next : null;
             slow = slow.next;
         }
