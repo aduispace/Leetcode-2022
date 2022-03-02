@@ -14,7 +14,7 @@ class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
-        
+        // time:  O(max(m, n))
         ListNode p1 = l1, p2 = l2;
         int carryOver = 0;
         ListNode dummyHead = new ListNode();
