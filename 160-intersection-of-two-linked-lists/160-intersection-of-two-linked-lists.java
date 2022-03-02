@@ -24,6 +24,7 @@ public class Solution {
         // }
         // return null;
         
+        // Time: O(M+N), 跑到重合点之前两个指针走过的路一样长2+3 == 3+2
         ListNode a = headA, b = headB;
         while (a != b) {
             a = a == null ? a = headB : a.next;
