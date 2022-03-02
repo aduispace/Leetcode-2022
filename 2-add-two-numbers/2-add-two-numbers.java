@@ -17,9 +17,11 @@ class Solution {
         // time:  O(max(m, n))
         ListNode p1 = l1, p2 = l2;
         int carryOver = 0;
+        // 注意dummyhead，dummyhead不动
         ListNode dummyHead = new ListNode();
         ListNode cur = dummyHead;
         while (p1 != null || p2 != null) {
+            // 简化code 不需要分情况讨论p1 和 p2
             int val1 = p1 == null ? 0 : p1.val;
             int val2 = p2 == null ? 0 : p2.val;
             int val = (val1 + val2 + carryOver) % 10;
