@@ -16,6 +16,7 @@ class Solution {
         ListNode dummyHead = new ListNode(0, head);
         int i = 1;
         while (head != null) {
+            // i > 2 because we need skip first two and they have been already setup as oddPre and evenPre
             if (i % 2 != 0 && i > 2) {
                 oddPre.next = head;
                 oddPre = head;
