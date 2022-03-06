@@ -12,7 +12,7 @@ class Solution {
     public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode oddPre = head, evenPre = head.next;
-        ListNode oddStart = head, evenStart = head.next;
+        ListNode evenStart = head.next; // oddStart = head; we don't need to record oddStart
         ListNode dummyHead = new ListNode(0, head);
         int i = 1;
         while (head != null) {
