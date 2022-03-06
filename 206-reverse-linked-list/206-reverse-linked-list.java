@@ -10,16 +10,27 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        // Maintain 3 pointers: pre, cur(head), next
-        // head必须要跑到null为止，此时反转linkedlist的头是pre！！！
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = pre;
-            pre = head;
-            head = next;
+        // bottom up recursion stack: recursion从最右边开始也就是最后进的那层
+        if (head == null || head.next == null) {
+            return head;
         }
+        ListNode reversedHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reversedHead;
         
-        return pre;
+//         // Iteration写法: 
+//         ListNode pre = null;
+//         // Maintain 3 pointers: pre, cur(head), next
+//         // head必须要跑到null为止，此时反转linkedlist的头是pre！！！
+//         while (head != null) {
+//             ListNode next = head.next;
+//             head.next = pre;
+//             pre = head;
+//             head = next;
+//         }
+        
+//         return pre;
+//     }
     }
 }
