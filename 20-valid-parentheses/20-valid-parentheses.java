@@ -2,6 +2,7 @@ class Solution {
     public boolean isValid(String s) {
         // (({{))}} not valid
         // ((({}))) valid
+        // stack definition: only store left parentheses
         Deque<Character> stack = new ArrayDeque<>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
