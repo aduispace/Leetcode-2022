@@ -5,6 +5,7 @@ class Solution {
         Deque<Integer> stack = new ArrayDeque<>();
         
         for (int i = asteroids.length - 1; i >= 0; i--) {
+            // stack definition: all asteroids left so far
             // 只有在stack top的元素为负（往左飞），当前元素为正（往右飞）的时候需要拿出来比较判断
             while (!stack.isEmpty() && i >= 0 && asteroids[i] > 0 && stack.peek() < 0) {
                 int curPeek = stack.peek();
