@@ -10,7 +10,7 @@ class Solution {
         }
         
         for (int i = nums2.length - 1; i >= 0; i--) {
-            // 单调栈处理顺序 1.先pop到valid的元素 2. 根据要求assign to result 3.最后再push当前元素
+            // 单调栈处理顺序 1.因为stack FILO特性，反方向遍历，先pop直到找到valid的元素 2. 根据要求assign to result 3.最后再push当前元素
             while (!stack.isEmpty() && stack.peek() <= nums2[i]) {
                 stack.pop();
             } 
