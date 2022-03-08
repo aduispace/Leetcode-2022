@@ -38,6 +38,7 @@ class MaxStack {
         }
         this.stack.pop();
         while (!temp.isEmpty()) {
+            // 注意temp重新回到stack里时，要按照上面的push（直接call this.push）入栈，不然最大值不对
             this.push(temp.pop()[0]);
         }
         
