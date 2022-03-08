@@ -1,5 +1,7 @@
 class MinStack {
     Deque<int[]> stack; 
+    
+    // a stack that record val and curMin at the same time
 
     public MinStack() {
         stack = new ArrayDeque<int[]>();
@@ -7,7 +9,11 @@ class MinStack {
     
     public void push(int val) {
         if (this.stack.isEmpty()) {
-            this.stack.push(new int[]{val, val});
+            // https://www.baeldung.com/java-initialize-array
+            
+            // 这两种写法都行 this.stack.push(new int[]{val, val});
+            int[] arr = {val, val};
+            this.stack.push(arr);
         } else {
             int curMin = stack.peek()[1];
             if (curMin > val) {
