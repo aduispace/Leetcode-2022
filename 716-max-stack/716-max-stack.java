@@ -1,4 +1,5 @@
 class MaxStack {
+    // or double stack: 
     Deque<int[]> stack;
 
     public MaxStack() {
@@ -31,6 +32,7 @@ class MaxStack {
     }
     
     public int popMax() {
+        // O(N) time for each operation
         int max = this.stack.peek()[1];
         Deque<int[]> temp = new ArrayDeque<>();
         while (this.stack.peek()[0] != max) {
