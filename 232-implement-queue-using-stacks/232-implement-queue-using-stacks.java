@@ -1,7 +1,7 @@
 class MyQueue {
     Deque<Integer> queue;
     Deque<Integer> stack;
-
+    // Amortized time O(1) because every element would be push to stack (s1) first and to queue next (s2)
     public MyQueue() {
         queue = new ArrayDeque<Integer>();
         stack = new ArrayDeque<Integer>();
