@@ -21,6 +21,7 @@ class MyQueue {
     }
     
     public int peek() {
+        // this.pop()的implementation放在peek也行
         int res = this.pop();
         queue.push(res);
         return res;
