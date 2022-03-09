@@ -4,11 +4,11 @@ class Solution {
 
         // 1 + 1 -> +1 +1
         // 
+        // return helper("(" + s + ")");
         return helper("(" + s + ")");
     }
     
     private int helper(String s) {
-        Deque<Integer> stack = new ArrayDeque<>();
         int sign = 1;
         int res = 0;
         int num = 0;
