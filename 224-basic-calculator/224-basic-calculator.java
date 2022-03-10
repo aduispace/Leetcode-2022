@@ -34,6 +34,7 @@ class Solution {
             }
         }
         
+        // 最后num得被清0，没被清0的要加上
         return res + num * sign;
  }    
     
