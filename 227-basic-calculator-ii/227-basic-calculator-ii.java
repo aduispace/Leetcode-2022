@@ -9,7 +9,8 @@ class Solution {
             if (Character.isDigit(ch)) {
                 num = num * 10 + (ch - '0');
             }
-            
+            // (!Character.isDigit(ch) && ch != ' ')
+            // i为最后一位的时候要把剩余的sign和num放入栈，所以这里和上面要写两个if
             if ((!Character.isDigit(ch) && ch != ' ') || i == s.length() - 1) {
                 switch (sign) {
                     case '+': stack.push(num);
