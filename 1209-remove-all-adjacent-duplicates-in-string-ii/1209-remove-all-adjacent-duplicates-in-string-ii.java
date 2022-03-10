@@ -4,6 +4,7 @@ class Solution {
         Deque<Integer> stack = new ArrayDeque<>();
          
         for (int i = 0; i < sb.length(); i++) {
+            // stack stores adjacent number of equal letters 
             // 整个循环对sb而不是s判断！！
             if (i == 0 || sb.charAt(i) != sb.charAt(i-1)) {
                 stack.push(1);
