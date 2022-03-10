@@ -57,7 +57,7 @@ class Solution {
                 operand = calculate(s);
                 
             } else if (ch == ')') {
-                break; // Sub-expression we were evaluating has ended. Exit now...
+                return result + nextOperandSign * operand; // Sub-expression we were evaluating has ended. Exit now...
                 
             } else { 
                 // If we're here, we just read the operator for the next operand/expression.
