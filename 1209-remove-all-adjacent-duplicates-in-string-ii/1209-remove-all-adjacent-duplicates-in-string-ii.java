@@ -4,11 +4,13 @@ class Solution {
         Deque<Integer> stack = new ArrayDeque<>();
          
         for (int i = 0; i < sb.length(); i++) {
+            // 整个循环对sb而不是s判断！！
             if (i == 0 || sb.charAt(i) != sb.charAt(i-1)) {
                 stack.push(1);
             } else {
                 int count = stack.pop() + 1;
                 if (count == k) {
+                    // be careful the delete start/end
                     sb.delete(i - k + 1, i + 1);
                     i = i - k;
                 } else {
