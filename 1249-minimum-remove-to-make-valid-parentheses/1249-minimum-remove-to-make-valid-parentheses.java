@@ -1,6 +1,7 @@
 class Solution {
     public String minRemoveToMakeValid(String s) {
         // stack for left parentheses position
+        // Time O(n), Space O(n)
         StringBuilder sb = new StringBuilder(s);
         Deque<Integer> stack = new ArrayDeque<>();
         
