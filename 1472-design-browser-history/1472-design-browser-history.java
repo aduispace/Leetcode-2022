@@ -11,6 +11,7 @@ class BrowserHistory {
         forwardHistory.clear();
     }
     
+    // backHistory的顶部就是当前visit所在的url，这个使得backHistory不能为空，最多清到size == 1
     public String back(int steps) {
         while (backHistory.size() > 1 && steps > 0) {
             forwardHistory.push(backHistory.pop());
@@ -20,6 +21,7 @@ class BrowserHistory {
         return backHistory.peek(); 
     }
     
+    // forward可以清空，出来的元素回到backhisotry，使得backhistory top始终为当前visit url
     public String forward(int steps) {
         while (forwardHistory.size() > 0 && steps > 0) {
             backHistory.push(forwardHistory.pop());
