@@ -7,7 +7,8 @@ class MovingAverage {
         windowSize = size;
     }
     
-    // O(1)
+    // space: using a deque, so it is O(N)
+    // Time for next(): O(1)
     public double next(int val) {
         double res = 0.0;
         dq.offerLast(val);
