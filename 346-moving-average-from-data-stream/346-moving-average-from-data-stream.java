@@ -1,16 +1,17 @@
 class MovingAverage {
     Deque<Integer> dq = new ArrayDeque<>();
-    int curSize = 0, sum = 0;
+    int sum = 0;
     int windowSize = 0;
 
     public MovingAverage(int size) {
         windowSize = size;
     }
     
+    // O(1)
     public double next(int val) {
         double res = 0.0;
         dq.offerLast(val);
-        curSize = dq.size();
+        int curSize = dq.size();
         if (curSize <= windowSize) {
             sum += val;
             res = (double) sum / curSize;
