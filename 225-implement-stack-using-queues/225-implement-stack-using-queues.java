@@ -8,9 +8,9 @@ class MyStack {
     }
     
     public void push(int x) {
-        while (!q2.isEmpty()) {
-            q1.offer(q2.poll());
-        }
+        // while (!q2.isEmpty()) {
+        //     q1.offer(q2.poll());
+        // }
         q1.offer(x);
     }
     
