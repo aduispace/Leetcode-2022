@@ -1,5 +1,14 @@
 class MyStack {
     
+    // queue is FIFO (first in - first out) data structure, in which elements are added only from the one side - rear and removed from the other - front.
+    
+//There are two solutions cost O(n) and O(1) for different operations:
+// push: O(n), pop/top: O(1)
+// push: O(1), pop/top: O(n)
+// Time efficiency depends on operation frequency of push, pop, top:
+// if push>pop+top, second solution is better.
+// if push<pop+top, first solution is better.
+    
     Queue<Integer> q1 = new LinkedList<>();
     Queue<Integer> q2 = new LinkedList<>();
 
