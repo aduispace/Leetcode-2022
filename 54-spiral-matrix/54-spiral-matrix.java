@@ -11,6 +11,7 @@ class Solution {
                     res.add(matrix[upper][i]);
                 }
             }
+            // shrink boundary
             upper++;
             // iterate right bound from upper to lower
             if (right >= left) {
@@ -19,6 +20,7 @@ class Solution {
                     res.add(matrix[i][right]);
                 }
             }
+            // shrink boundary
             right--;
             // iterate lower bound from right to left            
             if (lower >= upper) {
@@ -27,6 +29,7 @@ class Solution {
                     res.add(matrix[lower][i]);
                 }
             }
+            // shrink boundary
             lower--;
             // iterate left bound from lower to upper
             if (left <= right) {
@@ -35,6 +38,7 @@ class Solution {
                     res.add(matrix[i][left]);
                 }
             }
+            // shrink boundary
             left++;
         }
         
