@@ -1,5 +1,9 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
+        
+        
+        // time: O(NxM)
+        // space: O(M+N)
         Set<Integer> columns = new HashSet<>();
         Set<Integer> rows = new HashSet<>();
         int m = matrix.length, n = matrix[0].length;
@@ -23,6 +27,8 @@ class Solution {
             }
         }
         
+        // optimized with O(1) space, use first row and column as markers:
+        // https://leetcode.com/problems/set-matrix-zeroes/discuss/26014/Any-shorter-O(1)-space-solution
         
     }
 }
