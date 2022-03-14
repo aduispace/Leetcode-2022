@@ -1,6 +1,6 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-//         Time Complexity: O(NK \log K)O(NKlogK), where NN is the length of strs, and KK is the maximum length of a string in strs. The outer loop has complexity O(N)O(N) as we iterate through each string. Then, we sort each string in O(K \log K)O(KlogK) time.
+//         Time Complexity: O(NKlogK), where NN is the length of strs, and KK is the maximum length of a string in strs. The outer loop has complexity O(N)O(N) as we iterate through each string. Then, we sort each string in O(K \log K)O(KlogK) time.
 
 // Space Complexity: O(NK)O(NK), the total information content stored in ans.
         List<List<String>> res = new ArrayList<>();
@@ -16,7 +16,7 @@ class Solution {
         
         return res;
     }
-    
+    // 优化可以用counting sort：https://www.runoob.com/w3cnote/counting-sort.html
     private String sortString(String s) {
         // O(nlogN)
         char[] arr = s.toCharArray();
