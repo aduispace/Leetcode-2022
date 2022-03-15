@@ -4,6 +4,7 @@ class Solution {
         char[] secretArr = secret.toCharArray();
         char[] guessArr = guess.toCharArray();
         int a = 0, total = 0;
+        // O(N) time, O(N) Space
         for (char ch : secretArr) {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
