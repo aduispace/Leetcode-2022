@@ -2,6 +2,7 @@ class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> freqMap = new HashMap<>();
         Queue<int[]> maxPQ = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+        // Time complexity: O(KlogK), k is map size, worst case K == N so it would be O(nlogn).
         
         for (int i : nums) {
             freqMap.put(i, freqMap.getOrDefault(i, 0) + 1);
