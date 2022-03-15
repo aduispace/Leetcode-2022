@@ -1,5 +1,6 @@
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
+        // always store shorter array, save hashmap space memory
         if (nums1.length > nums2.length) {
             int[] temp = nums1;
             nums1 = nums2;
