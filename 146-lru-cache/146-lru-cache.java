@@ -18,7 +18,7 @@ class LRUCache {
     public void put(int key, int value) {
         this.makeKeyMostRecently(key, value);
         if (cache.size() > capacity) {
-            Integer deleteKey = 0;
+            // iterator starts from the first inserted element, so first next() would be the least used element
             int i = cache.keySet().iterator().next();
             cache.remove(i);
         }
