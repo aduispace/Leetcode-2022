@@ -6,6 +6,7 @@ class LRUCache {
         this.capacity = capacity;
     }
     
+    // O(1)
     public int get(int key) {
         if (!cache.containsKey(key)) {
             return -1;
@@ -15,6 +16,7 @@ class LRUCache {
         return val;
     }
     
+    // O(1)
     public void put(int key, int value) {
         this.makeKeyMostRecently(key, value);
         if (cache.size() > capacity) {
