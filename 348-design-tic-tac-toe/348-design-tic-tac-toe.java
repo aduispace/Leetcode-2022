@@ -4,6 +4,7 @@ class TicTacToe {
     int diagonal = 0;
     int anti = 0;
     
+    // win needs every single spot in that col/row/diagonal/antiDigonal to be taken
     int[] rowsTaken;
     int[] colsTaken;
     int diagonalTaken = 0;
