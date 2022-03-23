@@ -5,6 +5,7 @@ class TicTacToe {
     int anti = 0;
     
     // win needs every single spot in that col/row/diagonal/antiDigonal to be taken
+    // player是1就 -1， player是2就+2，避免出现总和相等但有空位没下棋的情况
 
     int n = 0;
     public TicTacToe(int n) {
