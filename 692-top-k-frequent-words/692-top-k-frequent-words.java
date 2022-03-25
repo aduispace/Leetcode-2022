@@ -1,12 +1,18 @@
 class Solution {
     public List<String> topKFrequent(String[] words, int k) {
+        // maxHeap做法，也可以用minheap做更快
+        // maxheap存n个元素，minheap只存top k个
+        // max heap time: O(nlogn + Klogn) = O(nlogn), nlogn add all elements to heap, klogN pop k words
+        
+        // min heap time: O(NlogK + KlogK) = O(NlogK)
+        
         Map<String, Integer> map = new HashMap<>();
         List<String> result = new ArrayList<>();
-        Queue<Pair<String, Integer>> maxPQ = new PriorityQueue<>((a, b) -> { 
+        Queue<Pair<String, Integer>> minPQ = new PriorityQueue<>((a, b) -> { 
             if (b.getValue() == a.getValue()) {
-                return a.getKey().compareTo(b.getKey());
+                return b.getKey().compareTo(a.getKey());
             } else {
-                return b.getValue() - a.getValue();
+                return a.getValue() - b.getValue();
             }
         });
         
@@ -18,14 +24,47 @@ class Solution {
         // Pair<String, Integer> ans = new Pair <String, Integer> ("", 0);
         
         for (String key : map.keySet()) {
-            maxPQ.offer(new Pair<String, Integer>(key, map.get(key)));
+            minPQ.offer(new Pair<String, Integer>(key, map.get(key)));
+            if (minPQ.size() > k) {
+                minPQ.poll();
+            }
         }
         
-        for (int i = 0; i < k; i++) {
-            result.add(maxPQ.poll().getKey());
+        while (!minPQ.isEmpty()) {
+            result.add(0, minPQ.poll().getKey());
         }
         
         
-        return result;
+        return result;      
+        
+        
+        
+//         Map<String, Integer> map = new HashMap<>();
+//         List<String> result = new ArrayList<>();
+//         Queue<Pair<String, Integer>> maxPQ = new PriorityQueue<>((a, b) -> { 
+//             if (b.getValue() == a.getValue()) {
+//                 return a.getKey().compareTo(b.getKey());
+//             } else {
+//                 return b.getValue() - a.getValue();
+//             }
+//         });
+        
+//         // get frequency
+//         for (String str : words) {
+//             map.put(str, map.getOrDefault(str, 0) + 1);
+//         }
+        
+//         // Pair<String, Integer> ans = new Pair <String, Integer> ("", 0);
+        
+//         for (String key : map.keySet()) {
+//             maxPQ.offer(new Pair<String, Integer>(key, map.get(key)));
+//         }
+        
+//         for (int i = 0; i < k; i++) {
+//             result.add(maxPQ.poll().getKey());
+//         }
+        
+        
+//         return result;
     }
 }
