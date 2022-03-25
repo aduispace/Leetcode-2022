@@ -10,6 +10,7 @@ class Solution {
         List<String> result = new ArrayList<>();
         Queue<Pair<String, Integer>> minPQ = new PriorityQueue<>((a, b) -> { 
             if (b.getValue() == a.getValue()) {
+                // for same values, the larger lexicographical would be poll out, the lexicographically smaller one would be remaining, which is required.
                 return b.getKey().compareTo(a.getKey());
             } else {
                 return a.getValue() - b.getValue();
@@ -31,6 +32,7 @@ class Solution {
         }
         
         while (!minPQ.isEmpty()) {
+            // because lower element came out first, we need append to head
             result.add(0, minPQ.poll().getKey());
         }
         
