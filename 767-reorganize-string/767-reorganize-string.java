@@ -3,7 +3,7 @@ class Solution {
         // [aaaaaac] this returns ""
         // [aaabbc] this return reorganized string
         
-        // Time O(3N), Space: O(N)
+        // Time: O(3NLogK), k is different # of char, worst O(3NLogN), Space: O(N)
         char[] res = new char[s.length()];
         Map<Character, Integer> map = new HashMap<>();
         Queue<Pair<Character, Integer>> maxPQ = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
