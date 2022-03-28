@@ -1,6 +1,9 @@
 class Solution {
     public String reorganizeString(String s) {
-        // [aaaaaac]
+        // [aaaaaac] this returns ""
+        // [aaabbc] this return reorganized string
+        
+        // Time O(3N), Space: O(N)
         char[] res = new char[s.length()];
         Map<Character, Integer> map = new HashMap<>();
         Queue<Pair<Character, Integer>> maxPQ = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
@@ -21,6 +24,7 @@ class Solution {
                 int count = first.getValue() - 1;
                 if (count > 0) maxPQ.offer(new Pair<Character, Integer>(res[i], count));
             } else {
+                // if second is not available, return ""
                 if (maxPQ.isEmpty()) return "";
                 Pair<Character, Integer> second = maxPQ.poll();
                 res[i] = second.getKey();
