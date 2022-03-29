@@ -19,7 +19,7 @@ class Solution {
         Queue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         
         // O(NlogK), k is length of lists, n is total number of listnode processed by PQ
-        
+        // pre process the first element of each list!!!
         for (ListNode i : lists) {
             if (i != null) {
                 minHeap.offer(i);
