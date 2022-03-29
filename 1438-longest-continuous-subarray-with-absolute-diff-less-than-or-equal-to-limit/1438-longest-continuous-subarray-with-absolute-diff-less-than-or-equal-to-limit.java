@@ -6,7 +6,7 @@ class Solution {
     public int longestSubarray(int[] nums, int limit) {
         int longest = 0;
         int left = 0;
-
+        // O(N^2)
         for (int i = 0; i < nums.length; i++) {
             maxHeap.offer(nums[i]);
             minHeap.offer(nums[i]);
@@ -14,6 +14,7 @@ class Solution {
                 longest = Math.max(i - left + 1, longest);
             } else {
                 while (left < i && this.maxDiff() > limit) {
+                    // O(N + logN) worst case to remove element
                     maxHeap.remove(nums[left]);
                     minHeap.remove(nums[left]);
                     left++;
