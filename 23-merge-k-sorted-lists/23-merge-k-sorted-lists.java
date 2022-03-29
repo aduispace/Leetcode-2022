@@ -34,7 +34,7 @@ class Solution {
             p = p.next;
         }
         
-        p.next = null;
+        // p.next = null;
         
         return dummyHead.next;
     }
