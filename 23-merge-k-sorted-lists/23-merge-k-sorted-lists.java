@@ -18,6 +18,8 @@ class Solution {
         ListNode p = dummyHead;
         Queue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         
+        // O(NlogK), k is length of lists, n is total number of listnode processed by PQ
+        
         for (ListNode i : lists) {
             if (i != null) {
                 minHeap.offer(i);
@@ -33,8 +35,6 @@ class Solution {
             p.next = new ListNode(curMin.val);
             p = p.next;
         }
-        
-        // p.next = null;
         
         return dummyHead.next;
     }
