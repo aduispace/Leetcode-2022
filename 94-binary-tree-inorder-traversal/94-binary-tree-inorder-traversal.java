@@ -29,12 +29,18 @@ class Solution {
         TreeNode cur = root;
         
         while (cur != null || !stack.isEmpty()) {
+            // 指针来访问节点，访问到最底层
             if (cur != null) {
+                // 将访问的节点放进栈
                 stack.push(cur);
+                // go left
                 cur = cur.left;
             } else {
+                // 从栈里弹出的数据，就是要处理的数据（放进result数组里的数据）
                 TreeNode node = stack.pop();
+                // go root(mid)
                 res.add(node.val);
+                // go right
                 cur = node.right;
             }
         }
