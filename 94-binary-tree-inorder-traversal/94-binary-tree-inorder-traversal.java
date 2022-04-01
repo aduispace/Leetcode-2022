@@ -22,7 +22,7 @@ class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         // inorder: left -> root -> right
         // 中序遍历顺序: 左-中-右 入栈顺序： 左-右
-        // inorder needs an addition pointer to handle adding result
+        // 中序遍历需要辅助指针，所以最复杂！！！inorder needs an addition pointer to handle adding result
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
         Stack<TreeNode> stack = new Stack<>();
