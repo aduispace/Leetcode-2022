@@ -13,6 +13,10 @@
  *     }
  * }
  */
+
+/*
+1. Iteration: 
+**/
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         // preorder: root -> left -> right
@@ -36,6 +40,10 @@ class Solution {
         return res;
     }
 }
+
+/*
+2. recursion: 
+**/
 
 // class Solution {
 //     public List<Integer> preorderTraversal(TreeNode root) {
