@@ -29,6 +29,10 @@ class Solution {
         }
         
         if (root.right != null) dfs(root.right, depth + 1, res);
+        // you have to travese left side because of somes cases like
+        //   1
+        //  / \
+        // 2
         if (root.left != null) dfs(root.left, depth + 1, res);
     }
 }
