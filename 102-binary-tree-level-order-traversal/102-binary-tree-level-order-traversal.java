@@ -20,10 +20,13 @@ class Solution {
         if (root == null) return res;
         q.offer(root);
         // BFS: using Queue
+        // while 循环控制从上向下一层层遍历
         while (!q.isEmpty()) {
             int size = q.size();
+            // 记录这一层的节点值
             List<Integer> curRes = new ArrayList<>();
             // i < size but not i < q.size(), because we keep poll out queue
+            // for 循环控制每一层从左向右遍历
             for (int i = 0; i < size; i++) {
                 TreeNode node = q.poll();
                 curRes.add(node.val);
