@@ -16,6 +16,11 @@
 
 /*
 1. Iteration: 
+
+Time complexity : we visit each node exactly once, thus the time complexity is O(N), n is number of nodes
+
+Space: O(N)
+
 **/
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
