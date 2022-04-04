@@ -33,6 +33,7 @@ class Solution {
         //   1
         //  / \
         // 2
+        // expected result is [1, 2]
         if (root.left != null) dfs(root.left, depth + 1, res);
     }
 }
