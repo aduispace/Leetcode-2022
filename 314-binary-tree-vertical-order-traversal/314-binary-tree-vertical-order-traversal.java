@@ -15,10 +15,14 @@
  */
 class Solution {
     public List<List<Integer>> verticalOrder(TreeNode root) {
+        // BFS: O(N) time and O(2N) space for map and queue
+        
+        
         Queue<Node> queue = new LinkedList<>();
-        Map<Integer, List<Integer>> map = new HashMap<>();
+        Map<Integer, List<Integer>> map = new HashMap<>(); // diameter to its list map
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
+        // leftMost/rightMost trackers should start with 0
         int leftMost = 0;
         int rightMost = 0;
         queue.offer(new Node(root, 0));
