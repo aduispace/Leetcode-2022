@@ -25,9 +25,10 @@ class Solution {
     
     private void postOrder(TreeNode root, int depth) {
         if (root == null) return;
+        maxDepth = Math.max(depth, maxDepth);
+
         postOrder(root.left, depth + 1);
         postOrder(root.right, depth + 1);
         
-        maxDepth = Math.max(depth, maxDepth);
     }
 }
