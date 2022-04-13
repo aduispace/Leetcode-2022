@@ -22,6 +22,7 @@ class Solution {
         if (isSameTree(root, subRoot)) {
             return true;
         } else {
+            // go left and right
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
         }
     }
