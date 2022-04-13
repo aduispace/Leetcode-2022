@@ -24,9 +24,11 @@ class Solution {
     }
     
     private void dfs(TreeNode root, int depth) {
+        // 返回条件
         if (root == null) {
             return;
         }
+        // 每次更新mindepth都在leaf node，这里是判断当前是不是叶子结点，然后go left and go right
         if (root.left == null && root.right == null) {
             minDepth = Math.min(minDepth, depth);
         }
