@@ -23,6 +23,7 @@ class Solution {
         if (left == null && right == null) return true;
         if (left == null || right == null) return false;
         if (left.val == right.val) {
+            // 判断内侧结点和外侧节点是否分别相等
             return isSubSymmetric(left.left, right.right) && isSubSymmetric(left.right, right.left);
         } else {
             return false;
