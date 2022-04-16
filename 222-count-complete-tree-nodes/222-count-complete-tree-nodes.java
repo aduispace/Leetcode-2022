@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    // Time: O(logN*logN)
+    // Time: O(logN*logN), in most case it is better than O(N)
     public int countNodes(TreeNode root) {
         if (root == null) return 0;
         
