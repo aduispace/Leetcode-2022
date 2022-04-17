@@ -14,6 +14,8 @@
  * }
  */
 class Solution {
+    // 每一条二叉树的「直径」长度，就是一个节点的左右子树的最大深度之和
+    // 可以不经过根节点！！！
     private int maxDiameter = 0;
     
     public int diameterOfBinaryTree(TreeNode root) {
