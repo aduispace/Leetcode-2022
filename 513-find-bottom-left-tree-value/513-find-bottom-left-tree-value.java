@@ -15,6 +15,7 @@
  */
 class Solution {
     public int findBottomLeftValue(TreeNode root) {
+        // the leftmost value in the last row of the tree, the last row告诉我们可以bfs
         Queue<TreeNode> queue = new LinkedList<>();
         if (root == null) return 0;
         TreeNode leftMost = root;
