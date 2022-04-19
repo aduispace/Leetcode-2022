@@ -14,33 +14,46 @@
  * }
  */
 class Solution {
-    
-    
-    /* 解法二、遍历二叉树的思路 */
-
-    // traverse and backtrack: 
-    private boolean isPathExisted = false;
-    private int sum = 0;
-    
+    // 
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
-        sum += root.val;
-        if (root.left == null && root.right == null) {
-            if (sum == targetSum) {
-                return true;
-            }
-            
+        targetSum -= root.val;
+        if (root.left == null && root.right == null && targetSum == 0) {
+            return true;
         }
-        boolean left = false;
-        boolean right = false;
-        if (root.left != null) {
-            left = hasPathSum(root.left, targetSum);
-        }
-        if (root.right != null) {
-            right = hasPathSum(root.right, targetSum);
-        }
-        sum -= root.val;
         
-        return left || right;
+        return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
     }
 }
+
+// class Solution {
+    
+    
+//     /* 解法二、遍历二叉树的思路 */
+
+//     // traverse and backtrack: 
+//     private boolean isPathExisted = false;
+//     private int sum = 0;
+    
+//     public boolean hasPathSum(TreeNode root, int targetSum) {
+//         if (root == null) return false;
+//         sum += root.val;
+//         if (root.left == null && root.right == null) {
+//             if (sum == targetSum) {
+//                 return true;
+//             }
+            
+//         }
+//         boolean left = false;
+//         boolean right = false;
+//         if (root.left != null) {
+//             left = hasPathSum(root.left, targetSum);
+//         }
+//         if (root.right != null) {
+//             right = hasPathSum(root.right, targetSum);
+//         }
+//         sum -= root.val;
+        
+//         return left || right;
+//     }
+// }
