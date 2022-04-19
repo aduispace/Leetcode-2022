@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    // dfs solution
     private int maxDepth = 0;
     private TreeNode res = null;
     
