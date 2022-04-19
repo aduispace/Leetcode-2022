@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    // 
+    // divide and conquer: postOrder! 当前问题是子问题的合并
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
         targetSum -= root.val;
