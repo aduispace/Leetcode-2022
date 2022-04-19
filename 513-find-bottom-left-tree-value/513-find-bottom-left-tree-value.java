@@ -32,6 +32,7 @@ class Solution {
         }
         traverse(root.left, depth);
         traverse(root.right, depth);
+        // need to backtrack
         depth--;
     }
 }
