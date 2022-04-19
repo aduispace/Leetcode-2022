@@ -26,14 +26,16 @@ class Solution {
     
     private void traverse(TreeNode root, int depth) {
         if (root == null) return;
+        // 前序遍历位置
         depth++;
         if (depth > maxDepth) {
             res = root;
             maxDepth = depth;
         }
+        
         traverse(root.left, depth);
         traverse(root.right, depth);
-        // need to backtrack
+        // 后序遍历位置, need to backtrack 因为往回的时候depth要减小
         depth--;
     }
 }
