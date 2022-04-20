@@ -27,8 +27,10 @@ class Solution {
         path.add(root.val);
         sum += root.val;
         if (root.left == null && root.right == null && sum == targetSum) {
+            // 这里很重要，不能直接add path，因为path reference 回溯的时候会变，得deep copy一份过来
             List<Integer> cur = new ArrayList<>(path);
             res.add(cur);
+            // 这段可有可无
             // path.remove(path.size() - 1);
             // sum -= root.val;
             // return;
