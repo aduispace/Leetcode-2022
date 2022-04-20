@@ -20,7 +20,7 @@ class Solution {
     // preorder [root, leftTree, rightTree]
     // inorder [leftTree, root, rightTree]
     private TreeNode buildSubTree(int[] preorder, int preOrderLeft, int preOrderRight, int[] inorder, int inOrderLeft, int inOrderRight) {
-        if (preOrderLeft > preOrderRight) return null; 
+        if (preOrderLeft > preOrderRight || preOrderLeft > preorder.length - 1) return null; 
         int rootVal = preorder[preOrderLeft];
         TreeNode root = new TreeNode(rootVal);
         int pos = inOrderLeft;
