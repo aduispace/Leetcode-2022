@@ -29,9 +29,9 @@ class Solution {
         if (root.left == null && root.right == null && sum == targetSum) {
             List<Integer> cur = new ArrayList<>(path);
             res.add(cur);
-            path.remove(path.size() - 1);
-            sum -= root.val;
-            return;
+            // path.remove(path.size() - 1);
+            // sum -= root.val;
+            // return;
         }
         
         traverse(root.left, path, sum, targetSum);
