@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    // divide and conquer
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return buildSubTree(nums, 0, nums.length - 1);
     }
