@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    // inorder traverse
     int minDiff = Integer.MAX_VALUE;
     Integer pre = null;
     
