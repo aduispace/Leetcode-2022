@@ -8,8 +8,12 @@
  * }
  */
 class Solution {
+    boolean pExist = false;
+    boolean qExist = false;
+    
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (!find(root, p) || !find(root, q)) {
+        traverse(root, p, q);
+        if (!pExist || !qExist) {
             return null;
         }
         return findLCA(root, p, q);
@@ -31,12 +35,16 @@ class Solution {
         return left != null ? left : right;
     }
     
-    private boolean find(TreeNode root, TreeNode target) {
-        if (root == null) return false;
-        if (root == target) {
-            return true;
-        } else {
-            return find(root.left, target) || find(root.right, target);
+    private void traverse(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return;
+        if (root == p) {
+            pExist = true;
+        } else if (root == q) {
+            qExist = true;
         }
+        traverse(root.left, p, q);
+        traverse(root.right, p, q);
+        
+        return;
     }
 }
