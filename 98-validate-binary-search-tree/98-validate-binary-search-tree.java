@@ -14,6 +14,8 @@
  * }
  */
 class Solution {
+    // 1. 不能单纯的比较左节点小于中间节点，右节点大于中间节点就完事了, 每个node都要满足条件
+    // 2. 边界条件 int min-value可能溢出
     private long prev = Long.MIN_VALUE;
     private boolean res = true;
     public boolean isValidBST(TreeNode root) {
