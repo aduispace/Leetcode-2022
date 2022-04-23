@@ -20,7 +20,7 @@ class Solution {
         }
         
         if (root.val >= p.val && root.val <= q.val) {
-            // root.val is in the middle, it is the LCA
+            // root.val is in the middle, it is the LCA, it might be the p or q
             return root;
         } else if (root.val < p.val) {
             // root.val is smallest, go right
