@@ -11,7 +11,7 @@
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return null;
-        
+        // Time Average: O(logN), worst: O(N)
         // switch to make p < q, always
         if (p.val > q.val) {
             TreeNode temp = q;
