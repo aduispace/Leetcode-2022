@@ -17,17 +17,16 @@ class Solution {
     int sum = 0;
     public TreeNode convertBST(TreeNode root) {
         reverseInorderTraverse(root);
-        
         return root;
     }
     
     private void reverseInorderTraverse(TreeNode root) {
         if (root == null) return;
         reverseInorderTraverse(root.right);
+        // 加的是之前节点的累加和
         sum += root.val;
         root.val = sum;
         reverseInorderTraverse(root.left);
-        
         
         return;
     }
