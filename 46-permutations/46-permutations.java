@@ -1,4 +1,6 @@
 class Solution {
+    // Time Complexity: O(N!)
+    // Space: O(N!)
     List<List<Integer>> res = new ArrayList<>();
     
     public List<List<Integer>> permute(int[] nums) {
