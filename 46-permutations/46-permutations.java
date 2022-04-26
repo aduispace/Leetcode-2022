@@ -10,6 +10,7 @@ class Solution {
     private void backtrack(int[] nums, List<Integer> path, boolean[] used) {
         // end condition
         if (path.size() == nums.length) {
+            // java回溯一定要记得不能直接add path reference！！！！！！ 要copy过去！！！！！
             res.add(new ArrayList<Integer>(path));
             return;
         }
