@@ -16,6 +16,7 @@
 class Solution {
     // divide and conquer
     public TreeNode trimBST(TreeNode root, int low, int high) {
+        // average O(N), if values are all within [low, high]
         if (root == null) return root;
         // root为本层处理的结点
         if (root.val < low) {
