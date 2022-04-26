@@ -15,9 +15,10 @@
  */
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
+        // time O(logN)
+        
         if (root == null) {
 //             1、寻找正确的插入位置，类似 700. 二叉搜索树中的搜索。
-
 // 2、把元素插进去，这就要把新节点以返回值的方式接到父节点上。
             
             return new TreeNode(val);
