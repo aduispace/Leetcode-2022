@@ -11,9 +11,11 @@ class Solution {
     // subset因为元素不能重复使用，backtrack tree结构不一样
     
     private void backtrack(int[] nums, List<Integer> path, int start) {
+        // 前序位置
         res.add(new ArrayList<Integer>(path));
         
         // dfs level from start
+        // it stops when start == nums.length!!
         for (int i = start; i < nums.length; i++) {
             path.add(nums[i]);
             // cannot go back, so start = i + 1
