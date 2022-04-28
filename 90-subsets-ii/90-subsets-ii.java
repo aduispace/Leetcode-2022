@@ -12,7 +12,7 @@ class Solution {
         res.add(new ArrayList<Integer>(path));
         
         for (int i = start; i < nums.length; i++) {
-            if (i > start && nums[i - 1] == nums[i]) {
+            if (i != start && nums[i - 1] == nums[i]) {
                 continue;
             }
             path.add(nums[i]);
