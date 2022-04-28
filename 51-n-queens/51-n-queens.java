@@ -37,6 +37,7 @@ class Solution {
     }
     
     private boolean isValid(char[][] board, int row, int col) {
+        // 只需要往4个方向找即可，左上，右上，上，左，其他位置还没有visit到
         int n = board.length;
         
         for (int i = row; i >= 0; i--) {
