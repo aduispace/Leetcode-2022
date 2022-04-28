@@ -13,8 +13,10 @@ class Solution {
     private void backtrack(int[] nums, List<Integer> path, int start) {
         res.add(new ArrayList<Integer>(path));
         
+        // dfs level from start
         for (int i = start; i < nums.length; i++) {
             path.add(nums[i]);
+            // cannot go back, so start = i + 1
             backtrack(nums, path, i + 1);
             path.remove(path.size() - 1);
         }
