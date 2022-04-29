@@ -6,8 +6,8 @@ class Solution {
         boolean[][] visited = new boolean[m][n];
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == word.charAt(0) && dfs(board, visited, i, j, word, new StringBuilder())) {
-                return true;        
+                if (board[i][j] == word.charAt(0) && dfs(board, visited, i, j, word, 0)) {
+                    return true;        
                 }
             }
         }
@@ -15,24 +15,20 @@ class Solution {
         return false;
     }
     
-    private boolean dfs(char[][] board, boolean[][] visited, int i, int j, String word, StringBuilder path) {
-        if (path.toString().equals(word)) {
+    private boolean dfs(char[][] board, boolean[][] visited, int i, int j, String word, int index) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || visited[i][j] || word.charAt(index) != board[i][j]) {
+            return false;
+        } else if (index == word.length() - 1) {
             return true;
-        } else if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || visited[i][j]) {
-            return false;
-        } else if (!word.contains(path.toString())) {
-            return false;
         }
         
         visited[i][j] = true;
-        path.append(board[i][j]);
-        boolean up = dfs(board, visited, i - 1, j, word, path);
-        boolean down = dfs(board, visited, i + 1, j, word, path);
-        boolean left = dfs(board, visited, i, j - 1, word, path);
-        boolean right = dfs(board, visited, i, j + 1, word, path);
+        boolean up = dfs(board, visited, i - 1, j, word, index + 1);
+        boolean down = dfs(board, visited, i + 1, j, word, index + 1);
+        boolean left = dfs(board, visited, i, j - 1, word, index + 1);
+        boolean right = dfs(board, visited, i, j + 1, word, index + 1);
         if (up || down || left || right) return true;
         visited[i][j] = false;
-        path.setLength(Math.max(0, path.length() - 1));
         
         return false;
     }
