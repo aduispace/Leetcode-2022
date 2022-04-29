@@ -21,6 +21,7 @@ class Solution {
             //     continue;
             // } 
             if (visited[i]) continue;
+            // [1, 2, 2] 如果只是用nums[i - 1] == nums[i]判断那么所有2都被prune, 此时只要知道i-1被用过即可进这层，也就是i-1没被用过，才要跳过
             if (i > 0 && nums[i - 1] == nums[i] && !visited[i - 1]) continue;
             visited[i] = true;
             path.add(nums[i]);
