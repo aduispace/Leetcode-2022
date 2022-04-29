@@ -29,7 +29,7 @@ class Solution {
             path.add(nums[i]);
             backtrack(nums, visited, path);
             visited[i] = false;
-            path.remove(path.size() - 1);
+            path.remove(Math.max(0, path.size() - 1));
         }
         
         return;
