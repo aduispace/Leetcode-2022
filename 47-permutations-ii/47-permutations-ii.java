@@ -1,5 +1,7 @@
 class Solution {
     List<List<Integer>> res = new ArrayList<>();
+    // Time O(N*N!) = total O(N!) results, each result take a for loop O(N)
+    // Space to hold the results O(N!)
     public List<List<Integer>> permuteUnique(int[] nums) {
         Arrays.sort(nums);
         boolean[] visited = new boolean[nums.length];
