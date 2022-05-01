@@ -1,6 +1,9 @@
 class Solution {
     List<String> res = new ArrayList<>();
     
+    // Time: O(2^N)
+    
+    // Space: O(N) callstack for backtracking
     public List<String> generateParenthesis(int n) {
         backtrack(new StringBuilder(), n, n);
         
@@ -13,6 +16,7 @@ class Solution {
             res.add(path.toString());
             return;
         } else if (left > right) {
+            // 剩下的右边必须>=左边parenthesis
             return;
         } else if (left < 0 || right < 0) {
             return;
