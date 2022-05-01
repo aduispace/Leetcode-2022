@@ -13,7 +13,9 @@ class Solution {
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         traverse(root, null);
         
+        // q is to process the BFS
         Queue<TreeNode> q = new LinkedList<>();
+        // visisted to avoid revisit
         Set<TreeNode> visited = new HashSet<>();
         List<Integer> res = new ArrayList<>();
         q.offer(target);
@@ -46,6 +48,7 @@ class Solution {
         return res;
     }
     
+    // traverse to store node - parentNode map
     private void traverse(TreeNode root, TreeNode parentNode) {
         if (root == null) return;
         map.put(root, parentNode);
