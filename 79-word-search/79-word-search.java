@@ -1,6 +1,9 @@
 class Solution {
     
     public boolean exist(char[][] board, String word) {
+        // Time: O(N*3^L), N number of chars in the board, L is the word length
+        
+        // Space: The main consumption of the memory lies in the recursion call of the backtracking function. The maximum length of the call stack would be the length of the word. Therefore, the space complexity of the algorithm is O(L)
         int m = board.length;
         int n = board[0].length;
         boolean[][] visited = new boolean[m][n];
