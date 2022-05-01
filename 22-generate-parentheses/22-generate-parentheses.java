@@ -8,6 +8,7 @@ class Solution {
     }
     
     private void backtrack(StringBuilder path, int left, int right) {
+        // prune in base cases: 
         if (left == 0 && right == 0) {
             res.add(path.toString());
             return;
