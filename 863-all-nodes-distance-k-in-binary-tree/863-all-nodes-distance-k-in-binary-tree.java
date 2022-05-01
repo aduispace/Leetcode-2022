@@ -35,7 +35,7 @@ class Solution {
                     q.offer(cur.right);
                     visited.add(cur.right);
                 }
-                if (map.containsKey(cur) && map.get(cur) != null && !visited.contains(map.get(cur))) {
+                if (map.get(cur) != null && !visited.contains(map.get(cur))) {
                     q.offer(map.get(cur));
                     visited.add(map.get(cur));
                 }
