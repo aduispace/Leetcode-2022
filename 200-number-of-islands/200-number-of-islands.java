@@ -36,6 +36,8 @@ class Solution {
                         }
                     }
                     res++;
+                } else {
+                    visited[i][j] = true;
                 }
             }
         }
