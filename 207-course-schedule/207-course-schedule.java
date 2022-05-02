@@ -1,4 +1,8 @@
 class Solution {
+    // Time O(E + V), e for edges, V for vertices, visit all Vs and for each V we will visit its edges
+    // Space O(E+V)
+    
+
     int[] indegrees;
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
