@@ -10,6 +10,7 @@ class Solution {
     private void traverse(int[][] graph, List<Integer> path, int start) {
         // end condition, and edge cases
         if (start == graph.length - 1) {
+            // 加入start 之后return前要move out start！！！！
             path.add(start);
             res.add(new ArrayList<>(path));
             path.remove(path.size() - 1);
