@@ -24,6 +24,7 @@ class Solution {
         }
         
         int count = 0;
+        // the BFS processed sequence is the topologically sorted!!
         int[] res = new int[numCourses];
         
         while (!q.isEmpty()) {
