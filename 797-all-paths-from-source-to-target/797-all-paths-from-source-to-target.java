@@ -20,6 +20,7 @@ class Solution {
         }
         
         path.add(start);
+        // path add 在for loop之外，因为这是对graph节点的处理，而不是graph path
         for (int i : graph[start]) {
             traverse(graph, path, i);
         }
