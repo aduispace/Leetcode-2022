@@ -18,7 +18,8 @@ class Solution {
     
     public int maxPathSum(TreeNode root) {
         if (root == null) return 0;
-                
+        
+        // 计算单边路径和时顺便计算最大路径和
         oneSideMax(root);
         
         return max;
@@ -27,6 +28,7 @@ class Solution {
     private int oneSideMax(TreeNode root) {
         if (root == null) return 0;
         
+        // 
         int leftMax = Math.max(0, oneSideMax(root.left));
         int rightMax = Math.max(0, oneSideMax(root.right));
         int totalMax = leftMax + rightMax + root.val;
