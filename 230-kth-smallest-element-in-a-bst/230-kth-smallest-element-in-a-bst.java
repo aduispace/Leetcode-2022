@@ -22,6 +22,7 @@ class Solution {
         return res;
     }
     
+    // 这里不能带着cur int进traverse，因为int不是reference type而是primitive type
     private void traverse(TreeNode root, int k) {
         if (root == null) return;
         traverse(root.left, k);
