@@ -27,7 +27,7 @@ class Solution {
     }
     
     // 这里不能带着cur int进traverse，因为int不是reference type而是primitive type
-    // Time: O(N) when 
+    // Time: O(K) return when we find k smallest 
     private void traverse(TreeNode root, int k) {
         if (root == null) return;
         traverse(root.left, k);
