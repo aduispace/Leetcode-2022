@@ -26,12 +26,11 @@ class Solution {
         }
         
         delete(root, set);
-        
-        
         return res;
     }
     
     private TreeNode delete(TreeNode root, Set<Integer> set) {
+        // divide and conquer buttom up, deal with the level when exit the node
         if (root == null) return null;
         
         root.left = delete(root.left, set);
@@ -43,6 +42,7 @@ class Solution {
             return null;
         }
         
+        // 返回修剪过的root
         return root;
     }
 }
