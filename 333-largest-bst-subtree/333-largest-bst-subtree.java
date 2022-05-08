@@ -22,6 +22,17 @@ class Solution {
         return res;
     }
     
+    // Time O(N): In the previous approaches, we traversed the tree from root to leaf. This resulted in us checking some of the same subtrees multiple times because a smaller subtree can be a part of many larger subtrees.
+    
+//     Thus, the following information must be passed up the tree when finding the largest BST:
+
+// Whether each subtree itself is BST.
+// The maximum value in the subtree.
+// The minimum value in the subtree.
+// Size of the subtree.
+
+
+    
     // return [current tree Max, current tree Min, cur tree size]
     private int[] findBST(TreeNode root) {
         // valid case for null, null is a BST
