@@ -1,5 +1,5 @@
 class Solution {
-    // union find: 
+    // union find: O(N) construct, O(1) union, O(1) find
     
     public boolean validTree(int n, int[][] edges) {
         UF unionFind = new UF(n);
