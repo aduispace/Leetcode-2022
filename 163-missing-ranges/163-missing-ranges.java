@@ -12,6 +12,7 @@ class Solution {
             a = nums[i] + 1;    
         }
         
+        // edge cases
         if (a <= upper || nums.length == 0) {
             res.add(generateStr(a, upper));
         }
