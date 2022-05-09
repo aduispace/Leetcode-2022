@@ -1,4 +1,6 @@
 class Solution {
+    // union find: 
+    
     public boolean validTree(int n, int[][] edges) {
         UF unionFind = new UF(n);
         for (int[] edge : edges) {
@@ -8,7 +10,7 @@ class Solution {
                 return false;
             }
         }
-        
+        // check if there is one disjoint tree
         return unionFind.count == 1;
     }
     
