@@ -44,6 +44,7 @@ class Solution {
     // Time: O(K*N)
 
     public String decodeString(String s) {
+        // two stacks, one for strings, one for ints
         Deque<String> strs = new ArrayDeque<>();
         Deque<Integer> ints = new ArrayDeque<>();
         
@@ -58,21 +59,25 @@ class Solution {
                     i++;
                 }
             } else if (arr[i] == '[') {
+                // meet '[', push both num and temp string to stack, reset num and temp string
                 ints.push(num);
                 num = 0;
-                
                 strs.push(sb.toString());
                 sb = new StringBuilder();
                 i++;
             } else if (arr[i] == ']') {
-                int k = ints.pop();
+                // pop both top inter
+                int topNum = ints.pop();
+                String topStr = strs.pop();
+                
                 String temp = "";
-                String cur = sb.toString();
-                String top = strs.pop();
-                for (int j = 0; j < k; j++) {
-                    temp = temp + cur;
+                // 重复的是当前res剩下的string
+                String curRes = sb.toString();
+                for (int j = 0; j < topNum; j++) {
+                    temp += curRes;
                 }
-                temp = top + temp;
+                // 最后res为str stack里top的加上刚才重复的 比如a2[c] -> acc
+                temp = topStr + temp;
                 
                 sb = new StringBuilder(temp);
                 i++;
