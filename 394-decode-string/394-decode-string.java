@@ -1,4 +1,8 @@
+// Approach 1: Divide and Conquer, DFS
+
 class Solution {
+    // Time: O(K*N)
+    // use a pointer from beginning
     int i = 0;
     
     public String decodeString(String s) {
@@ -14,10 +18,14 @@ class Solution {
             if (Character.isDigit(ch)) {
                 num = num * 10 + (ch - '0');
             } else if (ch == '[') {
+                // use recursion build(s), append that k times
                 String cur = build(s);
+                
+                // O(K), append k times 
                 for (int j = 0; j < num; j++) {
                     sb.append(cur);
                 }
+                // reset num to 0
                 num = 0;
             } else if (Character.isAlphabetic(ch)) {
                 sb.append(ch);
