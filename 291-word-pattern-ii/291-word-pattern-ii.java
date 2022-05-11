@@ -22,6 +22,7 @@ class Solution {
             // substring [)
             String part = s.substring(sPos, i);
             
+            // there is no mapping from key to empty string
             if (part.length() == 0) {
                 continue;
             }
