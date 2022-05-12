@@ -32,6 +32,7 @@ class Solution {
                 for (String neighbor : graph.getOrDefault(last, new HashSet<>())) {
                     if (!visited.contains(neighbor)) {
                         subVisited.add(neighbor);
+                        // 层内要回溯
                         if (neighbor.equals(endWord)) {
                             top.add(neighbor);
                             res.add(new ArrayList<>(top));
@@ -42,7 +43,6 @@ class Solution {
                             q.offer(new ArrayList<>(top));
                             top.remove(top.size() - 1);
                         }
-
                     }
                 }
             }
