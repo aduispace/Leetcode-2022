@@ -37,10 +37,12 @@ class Solution {
                             res.add(new ArrayList<>(top));
                             isFound = true;
                             top.remove(top.size() - 1);
+                        } else {
+                            top.add(neighbor);
+                            q.offer(new ArrayList<>(top));
+                            top.remove(top.size() - 1);
                         }
-                        top.add(neighbor);
-                        q.offer(new ArrayList<>(top));
-                        top.remove(top.size() - 1);
+
                     }
                 }
             }
