@@ -20,7 +20,7 @@ class Solution {
             }
         } else if (root.val < p.val) {
             res = inorderSuccessor(root.right, p);
-        } else if (root.val == p.val) {
+        } else {
             res = getMinNode(root.right);
         }
         
