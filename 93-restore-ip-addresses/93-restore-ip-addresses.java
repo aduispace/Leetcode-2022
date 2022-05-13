@@ -10,9 +10,15 @@ class Solution {
         if (start == s.length() && path.size() == 4) {
             res.add(String.join(".", path)); 
             return;
-        } 
+        }
         for (int i = start; i <= s.length(); i++) {
             String part = s.substring(start, i); // [start, i)
+            String remain = s.substring(i);
+            
+            // if (remain.length() >= 3 * (path.size())) {
+            //     continue;
+            // }
+            
             if (part.length() > 0 && isValid(part)) {
                 path.add(part);
                 generateIpAddress(path, i, s);
@@ -24,6 +30,8 @@ class Solution {
     }
     
     private boolean isValid(String str) {
+        // no leading zeros!! 
+        // ".01." won't work
         if (str.length() > 1 && str.charAt(0) == '0') {
             return false;
         }
