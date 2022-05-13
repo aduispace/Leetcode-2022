@@ -15,6 +15,7 @@ class Solution {
         
         if (root.val > p.val) {
             res = inorderSuccessor(root.left, p);
+            // if next level returns null, the cur root(parent) would be the successor
             if (res == null) {
                 res = root;
             }
@@ -26,7 +27,7 @@ class Solution {
         
         return res;
     }
-    
+    // if root.right is not null, successor would be the leftMost node
     private TreeNode getMinNode(TreeNode root) {
         while (root != null && root.left != null) {
             root = root.left;
