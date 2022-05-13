@@ -9,62 +9,31 @@
  */
 class Solution {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        if (root == null) {
-            return null;
-        }
 
-        TreeNode successor = null;
-
+        if (root == null) return null;
+        TreeNode res = null;
+        
         if (root.val > p.val) {
-            // 父节点收到 null 的话说明自己是 successor
-            successor = inorderSuccessor(root.left, p);
-            if (successor == null) {
-                successor = root;
+            res = inorderSuccessor(root.left, p);
+            if (res == null) {
+                res = root;
             }
+        } else if (root.val < p.val) {
+            res = inorderSuccessor(root.right, p);
+        } else if (root.val == p.val) {
+            res = getMinNode(root.right);
         }
-        if (root.val < p.val) {
-            successor = inorderSuccessor(root.right, p);
-        }
-
-        if (root.val == p.val) {
-            // 我是目标节点，我的 successor 要么是右子树的最小节点，要么是父节点
-            successor = getMinNode(root.right);
-        }
-
-        return successor;
-    }
-
-    // BST 中最左侧的节点就是最小节点
-    private TreeNode getMinNode(TreeNode p) {
-        while (p != null && p.left != null) {
-            p = p.left;
-        }
-        return p;
-    }
-//         if (root == null) return null;
-//         TreeNode res = null;
         
-//         if (root.val > p.val) {
-//             res = inorderSuccessor(root.left, p);
-//             if (res == null) {
-//                 return root;
-//             }
-//         } else if (root.val < p.val) {
-//             res = inorderSuccessor(root.right, p);
-//         } else {
-//             res = getMinNode(root.right);
-//         }
-        
-//         return res;
-//     }
+        return res;
+    }
     
-//     private TreeNode getMinNode(TreeNode root) {
-//         if (root != null && root.left != null) {
-//             root = root.left;
-//         }
+    private TreeNode getMinNode(TreeNode root) {
+        while (root != null && root.left != null) {
+            root = root.left;
+        }
         
-//         return root;
-//     }
+        return root;
+    }
     
     
 }
