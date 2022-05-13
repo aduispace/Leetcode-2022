@@ -23,6 +23,7 @@ class Solution {
     
     private void traverse(TreeNode root, double target) {
         if (root == null) return;
+        // res和target差与root与target差比，是diff相比！！
         res = Math.abs(root.val - target) < Math.abs(res - target) ? root.val : res;
         if (root.val > target) {
             traverse(root.left, target);
