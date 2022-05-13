@@ -20,7 +20,7 @@ class Solution {
         traverse(root, target);
         return res;
     }
-    
+    // Time O(H), for balanced tree, it would be O(logN)
     private void traverse(TreeNode root, double target) {
         if (root == null) return;
         // res和target差与root与target差比，是diff相比！！
