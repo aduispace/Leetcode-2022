@@ -6,15 +6,16 @@ class Solution {
     
     // board.length == 9
     private boolean backtrack(char[][] board, int row, int col) {
+        // row to end, we found a solution
         if (row >= 9) {
             return true;
         }
-        
+        // col to end, we go next level (row)
         if (col >= 9) {
             return backtrack(board, row + 1, 0);
         }
         
-        
+        // skip to next position
         if (board[row][col] != '.') {
             return backtrack(board, row, col + 1);
         }
