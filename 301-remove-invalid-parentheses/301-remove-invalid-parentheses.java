@@ -3,6 +3,7 @@ class Solution {
 
     public List<String> removeInvalidParentheses(String s) {
         int left = 0, right = 0;
+        // 先统计多出来的（ 和 ）
         for (char c : s.toCharArray()) {
             left += c == '(' ? 1 : 0;
             if (left == 0) {
