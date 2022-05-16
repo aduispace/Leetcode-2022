@@ -24,6 +24,7 @@ class Solution {
         }
         
         for (int i = start; i < s.length(); i++) {
+            // 在回溯的同一个level，（）），去掉前后任意一个）得到的结果都一样，所以需要跳过同样的以deduplicate
             if (i > start && s.charAt(i) == s.charAt(i - 1)) {
                 continue;
             } 
