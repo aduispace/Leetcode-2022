@@ -1,3 +1,39 @@
+// 记住TrieNode的定义:
+
+/***
+
+class TrieNode {
+
+    // R links to node children
+    private TrieNode[] links;
+
+    private final int R = 26;
+
+    private boolean isEnd;
+
+    public TrieNode() {
+        links = new TrieNode[R];
+    }
+
+    public boolean containsKey(char ch) {
+        return links[ch -'a'] != null;
+    }
+    public TrieNode get(char ch) {
+        return links[ch -'a'];
+    }
+    public void put(char ch, TrieNode node) {
+        links[ch -'a'] = node;
+    }
+    public void setEnd() {
+        isEnd = true;
+    }
+    public boolean isEnd() {
+        return isEnd;
+    }
+}
+
+***/
+
 public class TrieNode {
     private final int R = 26;
     boolean isWord = false;
@@ -6,8 +42,10 @@ public class TrieNode {
     public TrieNode(){}
 }
 
+// 字符存在path上，具体信息存在node里
+
 class Trie {
-    public TrieNode root;
+    private TrieNode root;
 
     public Trie() {
         // just need to instaniate a root
