@@ -1,16 +1,16 @@
-class Trie {
+public class TrieNode {
     private final int R = 26;
+    boolean isWord = false;
+    char val; 
+    TrieNode[] children = new TrieNode[R];
+    public TrieNode(){}
+}
 
-    public class TrieNode {
-        boolean isWord = false;
-        char val;  
-        TrieNode[] children = new TrieNode[R];
-        public TrieNode(){}
-    }
-    
+class Trie {
     public TrieNode root;
 
     public Trie() {
+        // just need to instaniate a root
         root = new TrieNode();
     }
 
@@ -31,6 +31,7 @@ class Trie {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
+            // move pointer to next
             cur = cur.children[c - 'a'];
         }
         
@@ -43,9 +44,10 @@ class Trie {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
+            // move pointer to next
             cur = cur.children[c - 'a'];
         }
-        
+        // prefix includes itself, "ab" prefix is "ab" or "a"
         return true;
     }
 }
