@@ -1,4 +1,5 @@
 class Solution {
+    // greedy + pq
     public String longestDiverseString(int a, int b, int c) {
         PriorityQueue<Pair<Character, Integer>> pq = new PriorityQueue<>((i, j) -> j.getValue() - i.getValue());
         int count = 0;
