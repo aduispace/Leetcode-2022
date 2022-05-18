@@ -61,26 +61,27 @@ class Solution {
         TrieNode root = new Trie(words).root;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                findWord(board, root, visited, "", i, j);
+                findWord(board, root, visited, new StringBuilder(), i, j);
             }
         }
             
         return new ArrayList<>(res);
     }
     
-    private void findWord(char[][] board, TrieNode root, boolean[][] visited, String path, int i, int j) {
+    private void findWord(char[][] board, TrieNode root, boolean[][] visited, StringBuilder path, int i, int j) {
         if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || visited[i][j]) {
             return;
         }
-        path = path + board[i][j];
+        path.append(board[i][j]);
         
         if (root.children[board[i][j] - 'a'] == null) {
+            path.deleteCharAt(path.length() - 1);
             return;
         }
         
         root = root.children[board[i][j] - 'a'];
         if (root.isWord) {
-            res.add(path);
+            res.add(path.toString());
         }
         
         visited[i][j] = true;
@@ -91,6 +92,7 @@ class Solution {
         findWord(board, root, visited, path, i, j - 1);
         
         visited[i][j] = false;
+        path.deleteCharAt(path.length() - 1);
         return;
     }
 
