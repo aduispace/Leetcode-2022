@@ -68,6 +68,9 @@ class Solution {
         return new ArrayList<>(res);
     }
     
+    // 优化方向： 1. use sringbuilder instead append string 2. Remove Trie class which unnecessarily starts from root in every dfs call. just use trienode
+        
+    
     private void findWord(char[][] board, TrieNode root, boolean[][] visited, StringBuilder path, int i, int j) {
         if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || visited[i][j]) {
             return;
