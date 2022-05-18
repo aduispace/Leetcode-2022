@@ -36,7 +36,11 @@ class WordDictionary {
         
         char c = word.charAt(0);
         if (c != '.') {
-            return start.children[c - 'a'] != null && searchUtil(word.substring(1), start.children[c - 'a']);
+            if (start.children[c - 'a'] == null) {
+                return false;
+            } else {
+                return searchUtil(word.substring(1), start.children[c - 'a']);
+            }
         } else {
             for (int j = 0; j < start.children.length; j++) {
                 if (start.children[j] != null && searchUtil(word.substring(1), start.children[j])) {
