@@ -40,6 +40,8 @@ class WordDictionary {
         } else {
             for (int j = 0; j < start.children.length; j++) {
                 if (start.children[j] != null && searchUtil(word.substring(1), start.children[j])) {
+                    // 注意这里不能直接return searchUtil(...), 因为有可能直接return false，但要整个children run完才知道有没有valid！！！
+                
                     return true;
                 }
             }
