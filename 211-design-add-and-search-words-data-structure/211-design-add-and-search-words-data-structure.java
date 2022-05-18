@@ -26,20 +26,20 @@ class WordDictionary {
     
 
     public boolean search(String word) {
-        return searchUtil(word, 0, root);
+        return searchUtil(word, root);
     }
     
-    public boolean searchUtil(String word, int i, TrieNode start) {
-        if (i >= word.length()) {
+    public boolean searchUtil(String word, TrieNode start) {
+        if (word == null || word.length() == 0) {
             return start.isWord;
         }
         
-        char c = word.charAt(i);
+        char c = word.charAt(0);
         if (c != '.') {
-            return start.children[c - 'a'] != null && searchUtil(word, i + 1, start.children[c - 'a']);
+            return start.children[c - 'a'] != null && searchUtil(word.substring(1), start.children[c - 'a']);
         } else {
             for (int j = 0; j < start.children.length; j++) {
-                if (start.children[j] != null && searchUtil(word, i + 1, start.children[j])) {
+                if (start.children[j] != null && searchUtil(word.substring(1), start.children[j])) {
                     return true;
                 }
             }
