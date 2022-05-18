@@ -24,54 +24,29 @@ class WordDictionary {
         cur.isWord = true;
     }
     
+
     public boolean search(String word) {
-        return match(word.toCharArray(), 0, root);
+        return searchUtil(word, 0, root);
     }
     
-    private boolean match(char[] chs, int k, TrieNode node) {
-        if (k == chs.length) {
-            return node.isWord;
+    public boolean searchUtil(String word, int i, TrieNode start) {
+        if (i >= word.length()) {
+            return start.isWord;
         }
-        if (chs[k] == '.') {
-            for (int i = 0; i < node.children.length; i++) {
-                if (node.children[i] != null && match(chs, k + 1, node.children[i])) {
+        
+        char c = word.charAt(i);
+        if (c != '.') {
+            return start.children[c - 'a'] != null && searchUtil(word, i + 1, start.children[c - 'a']);
+        } else {
+            for (int j = 0; j < start.children.length; j++) {
+                if (start.children[j] != null && searchUtil(word, i + 1, start.children[j])) {
                     return true;
                 }
             }
-        } else {
-            return node.children[chs[k] - 'a'] != null && match(chs, k + 1, node.children[chs[k] - 'a']);
         }
+        
         return false;
     }
-    
-
-//     public boolean search(String word) {
-//         return searchUtil(word, 0, root);
-//     }
-    
-//     public boolean searchUtil(String word, int i, TrieNode start) {
-//         if (i >= word.length()) {
-//             return start.isWord;
-//         }
-        
-//         char c = word.charAt(i);
-//         if (c != '.') {
-//             // if (start.children[c - ' '] == null) {
-//             //     return false;
-//             // } else {
-//             //     return searchUtil(word, i + 1, start.children[c - ' ']);
-//             // }
-//             return start.children[c - ' '] != null && searchUtil(word, i + 1, start.children[c - ' ']);
-//         } else {
-//             for (int j = 0; j < start.children.length; j++) {
-//                 if (start.children[j] != null) {
-//                     return searchUtil(word, i + 1, start.children[j]);
-//                 }
-//             }
-//         }
-        
-//         return false;
-//     }
 }
 
 /**
