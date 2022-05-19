@@ -2,6 +2,7 @@ class Solution {
     public int minDistance(String word1, String word2) {
         int[][] memo = new int[word1.length() + 1][word2.length() + 1];
         
+        // fill with -1 cuz move could be 0
         for (int[] row : memo) {
             Arrays.fill(row, -1);
         }
