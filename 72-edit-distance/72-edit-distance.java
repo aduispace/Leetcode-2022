@@ -21,10 +21,11 @@ class Solution {
         if (word1.charAt(0) == word2.charAt(0)) {
             return getMinMoves(word1.substring(1), word2.substring(1), memo);
         } else {
-            int delete = getMinMoves(word1, word2.substring(1), memo);
-            int insert = getMinMoves(word1.substring(1), word2, memo);
+            int delete = getMinMoves(word1.substring(1), word2, memo); // delete extra char in word1, so compare next on word1.
+            int insert = getMinMoves(word1, word2.substring(1), memo); // insert in word1 with extra char at word2, so compare next on word2.
             int replace = getMinMoves(word1.substring(1), word2.substring(1), memo);
             
+            // add one move
             memo[m][n] = 1 + Math.min(delete, Math.min(insert, replace));
         }
         
