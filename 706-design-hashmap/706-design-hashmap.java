@@ -19,6 +19,7 @@ class MyHashMap {
             Pair<Integer, Integer> removed = null;
             for (Pair<Integer, Integer> cur : map[hashKey]) {
                 if (cur.getKey() == key) {
+                    // cannot remove it here, it throws ConcurrentModificationException
                     removed = cur;
                     break;
                 } 
