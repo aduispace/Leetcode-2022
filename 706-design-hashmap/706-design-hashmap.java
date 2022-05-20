@@ -1,4 +1,8 @@
 class MyHashMap {
+    
+//  1. For a given key value, first we apply the hash function to generate a hash key, which corresponds to the address in our main storage. With this hash key, we would find the bucket where the value should be stored.
+
+// 2. Now that we found the bucket, we simply iterate through the bucket to check if the desired <key, value> pair does exist.
     List<Pair<Integer, Integer>>[] map;
 
     public MyHashMap() {
