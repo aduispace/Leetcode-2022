@@ -25,6 +25,7 @@ class Solution {
         int res = 1;
         visited[x][y] = true;
         
+        // divide and conquer
         for (int i = 0; i < m; i++) {
             if (grid[i][y] == 1 && !visited[i][y]) {
                 res += dfs(visited, grid, i, y);
