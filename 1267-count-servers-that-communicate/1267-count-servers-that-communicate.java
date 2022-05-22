@@ -22,6 +22,10 @@ class Solution {
     private int dfs(boolean[][] visited, int[][] grid, int x, int y) {
         int m = grid.length;
         int n = grid[0].length;
+        if (x < 0 || x >= m || y < 0 || y >= n || visited[x][y]) {
+            return 0;
+        }
+        
         int res = 1;
         visited[x][y] = true;
         
