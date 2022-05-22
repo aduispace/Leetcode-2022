@@ -1,5 +1,7 @@
 class Solution {
     public int countServers(int[][] grid) {
+        // time O(MN*(M+N)), 对一共mn个点，横竖遍历m + n
+        // similar to number of islands, but count island size
         int m = grid.length;
         int n = grid[0].length;
         int res = 0;
