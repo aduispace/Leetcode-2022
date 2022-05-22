@@ -3,20 +3,21 @@ class Solution {
         // [aababbab] -> [b: 3, a: 2]
         // [bbaaaaabb] -> [b: 2, ]
         int res = 0;
+        int numOfB = 0;
         Stack<Character> stack = new Stack<>();
         
         for (char c : s.toCharArray()) {
             if (c == 'a') {
-                if (stack.isEmpty()) {
+                if (numOfB == 0) {
                     continue;
                 } else {
                     res++;
-                    stack.pop();
+                    numOfB--;
                 }
             }
             
             if (c == 'b') {
-                stack.push('b');
+                numOfB++;
             }
         }
         
