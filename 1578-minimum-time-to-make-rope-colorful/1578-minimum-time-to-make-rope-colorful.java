@@ -1,5 +1,5 @@
 // For each group of continuous same characters,
-// we need cost = sum_cost(group) - max_cost(group)
+// we need cost = sum_cost(group) - max_cost(group), 只需要知道每个区间最大的cost就行
 
 class Solution {
     // Time O(N)
