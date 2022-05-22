@@ -1,6 +1,6 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
-        // 起点升序，终点降序
+        // 起点升序，终点降序，排序完一半可以分三种情况讨论
         List<int[]> res = new ArrayList<>();
         
         Arrays.sort(intervals, (a, b) -> {
@@ -36,6 +36,7 @@ class Solution {
             }
         }
         
+        // edge case： 最后一个res可能没加入结果！！
         if (res.size() == 0 || res.get(res.size() - 1)[0] != start) {
             res.add(new int[]{start, end});
         } 
