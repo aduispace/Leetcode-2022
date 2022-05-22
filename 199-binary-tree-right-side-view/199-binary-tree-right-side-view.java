@@ -21,23 +21,23 @@ class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
-        dfs(root, 0, res);
+        rightView(root, 0, res);
         
         return res;
     }
     
-    private void dfs(TreeNode root, int depth, List<Integer> res) {
+    private void rightView(TreeNode root, int depth, List<Integer> res) {
         if (depth == res.size()) {
             res.add(root.val);
         }
         
-        if (root.right != null) dfs(root.right, depth + 1, res);
+        if (root.right != null) rightView(root.right, depth + 1, res);
         // you have to travese left side because of somes cases like
         //   1
         //  / \
         // 2
         // expected result is [1, 2]
-        if (root.left != null) dfs(root.left, depth + 1, res);
+        if (root.left != null) rightView(root.left, depth + 1, res);
     }
     
     private void leftView(TreeNode root, int depth, List<Integer> res) {
@@ -45,13 +45,13 @@ class Solution {
             res.add(root.val);
         }
         
-        if (root.left != null) dfs(root.left, depth + 1, res);
+        if (root.left != null) leftView(root.left, depth + 1, res);
         // you have to travese left side because of somes cases like
         //   1
         //  / \
         // 2
         // expected result is [1, 2]
-        if (root.right != null) dfs(root.right, depth + 1, res);
+        if (root.right != null) leftView(root.right, depth + 1, res);
     }
 }
 
