@@ -23,7 +23,7 @@ class Solution {
         // BFS
         if (node == null) return null;
         
-        Map<Node, Node> map = new HashMap<>(); // original Node to new Node
+        Map<Node, Node> map = new HashMap<>(); // original Node to its cloned node
         Node root = new Node(node.val);
         Queue<Node> q = new LinkedList<>();
 
@@ -33,10 +33,12 @@ class Solution {
         while (!q.isEmpty()) {
             Node cur = q.poll();
             for (Node neighbor : cur.neighbors) {
+                // if it is never cloned
                 if (!map.containsKey(neighbor)) {
                     map.put(neighbor, new Node(neighbor.val));
                     q.offer(neighbor);
                 }
+                // add to cloned cur node neighbors
                 map.get(cur).neighbors.add(map.get(neighbor));
             }
         }
