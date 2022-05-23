@@ -20,6 +20,7 @@ class Node {
 
 class Solution {
     public Node cloneGraph(Node node) {
+        // BFS
         if (node == null) return null;
         
         Map<Node, Node> map = new HashMap<>(); // original Node to new Node
