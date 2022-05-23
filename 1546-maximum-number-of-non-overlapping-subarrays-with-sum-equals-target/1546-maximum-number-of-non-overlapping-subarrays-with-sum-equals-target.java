@@ -1,12 +1,14 @@
 class Solution {
+    // greedy O(N)
     public int maxNonOverlapping(int[] nums, int target) {
         int res = 0;
         int sum = 0;
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, -1); // sum to lastIndex
-        int lastIndex = -1;
+        int lastIndex = -1; // cur processed last index
         
         for (int i = 0; i < nums.length; i++) {
+            // preSum
             sum += nums[i];
             if (map.containsKey(sum - target) && map.get(sum - target) >= lastIndex) {
                 res++;
