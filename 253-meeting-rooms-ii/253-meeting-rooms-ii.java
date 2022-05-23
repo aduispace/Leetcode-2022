@@ -1,5 +1,6 @@
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
+        // O(NlogN)
         // sweep line: project intervals to x axis -> sort start and end array -> meeting start, count++, meeting end, count--
         int[] start = new int[intervals.length];
         int[] end = new int[intervals.length];
