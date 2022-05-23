@@ -1,5 +1,6 @@
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
+        // sweep line: project intervals to x axis -> meeting start, count++, meeting end, count--
         int[] start = new int[intervals.length];
         int[] end = new int[intervals.length];
         
@@ -18,6 +19,7 @@ class Solution {
                 curCount++;
                 i++;
             } else {
+                // if start[i] == end[j], 相连不冲突，不需要多加一个meeting room
                 curCount--;
                 j++;
             }
