@@ -22,6 +22,6 @@ class Solution {
             }
         }
         
-        return start == gas.length ? -1 : start;
+        return start;
     }
 }
