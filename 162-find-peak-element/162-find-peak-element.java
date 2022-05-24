@@ -11,7 +11,7 @@ class Solution {
                 right = mid - 1;
             }
         }
-        // this just returns mid!
+        // with this condition left <= right, it just returns mid!
         return left + (right - left) / 2;
     }
 }
