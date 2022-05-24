@@ -1,5 +1,6 @@
 class Solution {
     public int findPeakElement(int[] nums) {
+        // O(logN)
         int left = 0, right = nums.length - 1;
         
         while (left <= right) {
@@ -10,7 +11,7 @@ class Solution {
                 right = mid - 1;
             }
         }
-        
+        // this just returns mid!
         return left + (right - left) / 2;
     }
 }
