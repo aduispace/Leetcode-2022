@@ -8,6 +8,7 @@ class Solution {
         dp[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
             dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            // we could loop the dp over again, or just record max on the fly
             res = Math.max(dp[i], res);
         }
         
