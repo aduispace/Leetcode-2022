@@ -11,6 +11,6 @@ class Solution {
             }
         }
         
-        return left;
+        return left + (right - left) / 2;
     }
 }
