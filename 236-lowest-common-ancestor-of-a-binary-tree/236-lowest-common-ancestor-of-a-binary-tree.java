@@ -15,10 +15,12 @@ class Solution {
             return root;
         }
         
+        // divide and conquer!
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
         
         if (left == null && right == null) {
+            // 都没找到
             return null;
         }
         if (left != null && right != null) {
