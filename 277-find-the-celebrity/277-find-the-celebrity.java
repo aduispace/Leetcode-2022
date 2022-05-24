@@ -3,6 +3,8 @@
 
 // boolean knows(int a, int b) return if a knows b
 
+// O(N)
+
 public class Solution extends Relation {
     public int findCelebrity(int n) {
         int cand = 0;
@@ -14,6 +16,7 @@ public class Solution extends Relation {
             }
         }
         
+        // final check
         for (int i = 0; i < n; i++) {
             if (i == cand) continue;
             if (knows(cand, i) || !knows(i, cand)) {
