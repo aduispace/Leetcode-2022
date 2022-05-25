@@ -1,8 +1,10 @@
 class Solution {
+    // O(N^2 + nlogN)
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
         
+        // O(N^2)
         for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
             // 之前算过的都要去掉，只跟之前指针所指的位置比！！！
             
