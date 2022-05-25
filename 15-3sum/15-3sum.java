@@ -23,10 +23,10 @@ class Solution {
                         // deduplicated!
                         left++;
                     }
-                    // while (right - 1 >= 0 && nums[right] == nums[right - 1]) {
-                    //     // deduplicated!
-                    //     right--;
-                    // }
+                    while (right + 1 < nums.length && right >= 0 && nums[right] == nums[right + 1]) {
+                        // deduplicated!
+                        right--;
+                    }
                 } else if (nums[left] + nums[right] > target) {
                     right--;
                 } else {
