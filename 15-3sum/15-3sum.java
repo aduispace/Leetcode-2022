@@ -4,7 +4,7 @@ class Solution {
         List<List<Integer>> res = new ArrayList<>();
         
         for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
-            // 之前算过的都要去掉
+            // 之前算过的都要去掉，只跟之前指针所指的位置比！！！
             
             if (i > 0 && nums[i] == nums[i - 1]) {
                 // deduplicate!
