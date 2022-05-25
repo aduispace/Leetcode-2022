@@ -1,6 +1,7 @@
 class Solution {
     boolean res = true;
     
+    // Time: O(N*V) vertices
     public boolean possibleBipartition(int n, int[][] dislikes) {
         Map<Integer, Set<Integer>> graph = new HashMap<>();
         boolean[] visited = new boolean[n + 1]; // index starts with 1
@@ -24,6 +25,7 @@ class Solution {
                 } else {
                     if (relations[neighbor] == relations[i]) {
                         res = false;
+                        return;
                     }
                 }
             }
