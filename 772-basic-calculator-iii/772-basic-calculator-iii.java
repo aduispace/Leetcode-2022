@@ -1,5 +1,5 @@
 class Solution {
-    int i = 0;
+    // recursively solve this
     
     public int calculate(String s) {
    Queue<Character> tokens = new ArrayDeque<Character>();
@@ -13,7 +13,10 @@ class Solution {
 }
 
 private int calculate(Queue<Character> tokens){
-
+     
+    // 6-4/2 -> 0  +  6 - 4 / 2
+    //.        prev  num 
+    // 处理到当前num时只处理prev的计算结果
    char preOp = '+';
    int num = 0, sum = 0, prev = 0;
 
