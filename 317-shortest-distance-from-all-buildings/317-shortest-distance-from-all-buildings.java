@@ -16,6 +16,7 @@ public class Solution {
                     myQueue.offer(new int[] {i,j});
                     
                     // for every grid[i][j], we renew a isVisited grid!
+                    // for each building ("1"), we do an entire BFS search for the grid
                     boolean[][] isVisited = new boolean[row][col];
                     int level = 1;
                     
