@@ -14,7 +14,8 @@ public class Solution {
                     buildingNum++;
                     Queue<int[]> myQueue = new LinkedList<int[]>();
                     myQueue.offer(new int[] {i,j});
-
+                    
+                    // for every grid[i][j], we renew a isVisited grid!
                     boolean[][] isVisited = new boolean[row][col];
                     int level = 1;
                     
