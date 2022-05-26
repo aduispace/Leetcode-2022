@@ -1,7 +1,7 @@
 public class Codec {
     Map<String, String> index = new HashMap<>(); // longUrl to shortUrl
     Map<String, String> revIndex = new HashMap<>(); // shortUrl to longUrl
-    String charSet = "abcdefghijklmnopqrstuvwxyz01234567"; // base36 (we could also do base62)
+    String charSet = "abcdefghijklmnopqrstuvwxyz01234567"; // base36 (we could also do base62 encoding)
     String hostName = "http://tinyurl.com/";
     
     private String getKey() {
