@@ -6,12 +6,14 @@ class Solution {
         // pop first, then determine the current result value (distance) based on left elements in stack
         Deque<Integer> stack = new ArrayDeque<>();
         for (int i = len - 1; i >= 0; i--) {
+            // 每一个循环都check stack，比当前小就pop
             while (!stack.isEmpty() && temperatures[stack.peek()] <= temperatures[i]) {
                 stack.pop();
             }
             if (stack.isEmpty()) {
                 result[i] = 0;
             } else {
+                // 算距离
                 result[i] = stack.peek() - i;
             }
             // 最后再把当前元素push进去，之前都是当前元素和它右边元素的比较
