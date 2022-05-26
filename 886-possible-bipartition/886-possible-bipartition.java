@@ -16,6 +16,7 @@ class Solution {
     }
     
     private void traverse(Map<Integer, Set<Integer>> graph, int i, boolean[] visited, boolean[] relations) {
+        // bfs recursively
         if (!visited[i]) {
             visited[i] = true;
             for (int neighbor : graph.getOrDefault(i, new HashSet<>())) {
