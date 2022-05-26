@@ -1,7 +1,6 @@
 class Solution {
     public int orangesRotting(int[][] grid) {
         int total = 0;
-        int res = Integer.MAX_VALUE;
         int count = 0;
         int time = -1;
         int m = grid.length;
@@ -28,6 +27,7 @@ class Solution {
         
         while (!q.isEmpty()) {
             int size = q.size();
+            // 第一次处理的是全为2的情况，time先为-1
             for (int i = 0; i < size; i++) {
                 int[] cur = q.poll();
                 int x = cur[0];
