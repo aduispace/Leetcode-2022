@@ -14,11 +14,14 @@ class Solution {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1 || grid[i][j] == 2) total++;
                 if (grid[i][j] == 2) {
+                    // 加到queue里面的时候就mark true
+                    visited[i][j] = true;
                     q.offer(new int[]{i, j});
                 }
             }
         }
         
+        // no orange return 0
         if (total == 0) {
             return 0;
         }
@@ -29,7 +32,6 @@ class Solution {
                 int[] cur = q.poll();
                 int x = cur[0];
                 int y = cur[1];
-                visited[x][y] = true;
                 count++;
                 
                 if (x - 1 >= 0 && grid[x - 1][y] == 1 && !visited[x - 1][y]) {
