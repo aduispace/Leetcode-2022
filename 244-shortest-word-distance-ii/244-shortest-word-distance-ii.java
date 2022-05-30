@@ -1,5 +1,6 @@
 class WordDistance {
     // ["practice", "makes", "perfect", "coding", "makes"]
+    // map: String -> position list
     Map<String, List<Integer>> map = new HashMap<>();
     
     
@@ -17,7 +18,7 @@ class WordDistance {
         if (!map.containsKey(word1) || !map.containsKey(word2)) {
             return -1;
         }
-        
+        // already sorted
         List<Integer> list1 = map.get(word1); // [1, 4, 5]
         List<Integer> list2 = map.get(word2); // [3, 8]
         
