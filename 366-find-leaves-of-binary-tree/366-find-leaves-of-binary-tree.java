@@ -30,6 +30,7 @@ class Solution {
             res.add(new ArrayList<Integer>());
         }
         
+        // null是第0层，叶子是第一层
         res.get(curHeight - 1).add(root.val);
         
         return curHeight;
